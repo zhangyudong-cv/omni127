@@ -120,7 +120,7 @@ class Cityscapes13forVal(data.Dataset):
             
             img_file = os.path.join(self.root, "leftImg8bit/%s/%s/%s" % (self.set, city_name, name))
             
-            lbname = name.replace("_leftImg8bit.png", "_gtFine_labelTrainIds.png")
+            lbname = name.replace("_leftImg8bit.png", "_gtFine_labelIds.png")
             label_file = os.path.join(self.root, "gtFine/%s/%s/%s" % (self.set, city_name, lbname))
             # -----------------------------------------------------------
             
@@ -129,7 +129,12 @@ class Cityscapes13forVal(data.Dataset):
                 "label": label_file,
                 "name": name
             })
-        self._key = np.array([0,1,2,3,4,5,6,7,8,9,10,11,11,12,12,12,255,12,12])
+        self._key = np.array([255, 255, 255, 255, 255,
+                              255, 255, 0, 1, 255, 255,
+                              2, 3, 4, 255, 255, 255,
+                              5, 255, 6, 7, 8, 9,
+                              10, 11, 11, 12, 12, 12,
+                              255, 255, 255, 12, 12])
 
     def __len__(self):
         return len(self.files)

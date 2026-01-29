@@ -24,3 +24,4 @@ config: {'seed': 1234, 'batch_size': 4, 'num_epochs': 10, 'lr': 0.0001, 'backbon
 2026-01-29 19:48:07,587 INFO    MainThread:8901 [wandb_run.py:_redirect():2255] Wrapping output streams.
 2026-01-29 19:48:07,587 INFO    MainThread:8901 [wandb_run.py:_redirect():2280] Redirects installed.
 2026-01-29 19:48:07,588 INFO    MainThread:8901 [wandb_init.py:init():842] run started, returning control to user process
+2026-01-29 20:49:17,566 WARNING MsgRouterThr:8901 [router.py:message_loop():77] message_loop has been closed
