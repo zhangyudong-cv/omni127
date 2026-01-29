@@ -19,15 +19,27 @@ class Cityscapes13(data.Dataset):
         self.img_ids = [i_id.strip() for i_id in open(list_path)]
         for name in self.img_ids:
             name = os.path.basename(name)
-            img_file = os.path.join(self.root, "leftImg8bit/%s/%s" % (self.set, name))
-            lbname = name.replace("_leftImg8bit.png", "_gtFine_labelTrainIds.png")
-            label_file = os.path.join(self.root, "gtFine/%s/%s" % (self.set, lbname))
+            # -----------------------------------------------------------
+            # [修改 1] 提取城市名并加入路径
+            city_name = name.split('_')[0] 
+            
+            img_file = os.path.join(self.root, "leftImg8bit/%s/%s/%s" % (self.set, city_name, name))
+            
+            lbname = name.replace("_leftImg8bit.png", "_gtFine_labelIds.png")
+            label_file = os.path.join(self.root, "gtFine/%s/%s/%s" % (self.set, city_name, lbname))
+            # -----------------------------------------------------------
+            
             self.files.append({
                 "img": img_file,
                 "label": label_file,
                 "name": name
             })
-        self._key = np.array([0,1,2,3,4,5,6,7,8,9,10,11,11,12,12,12,255,12,12])
+        self._key = np.array([255, 255, 255, 255, 255,
+                              255, 255, 0, 1, 255, 255,
+                              2, 3, 4, 255, 255, 255,
+                              5, 255, 6, 7, 8, 9,
+                              10, 11, 11, 12, 12, 12,
+                              255, 255, 255, 12, 12])
 
     def __len__(self):
         return len(self.files)
@@ -90,15 +102,28 @@ class Cityscapes13forVal(data.Dataset):
         self.list_path = list_path
         self.crop_size = crop_size
         self.set = set
-        self.stride, self.window_size = sliding_window
+        
+        # -----------------------------------------------------------
+        # [修改 2] 修复变量名错误: sliding_window -> sw_setting
+        self.stride, self.window_size = sw_setting 
+        # -----------------------------------------------------------
+        
         self.files = []
 
         self.img_ids = [i_id.strip() for i_id in open(list_path)]
         for name in self.img_ids:
             name = os.path.basename(name)
-            img_file = os.path.join(self.root, "leftImg8bit/%s/%s" % (self.set, name))
+            
+            # -----------------------------------------------------------
+            # [修改 3] 同样的路径修复，增加 city_name
+            city_name = name.split('_')[0]
+            
+            img_file = os.path.join(self.root, "leftImg8bit/%s/%s/%s" % (self.set, city_name, name))
+            
             lbname = name.replace("_leftImg8bit.png", "_gtFine_labelTrainIds.png")
-            label_file = os.path.join(self.root, "gtFine/%s/%s" % (self.set, lbname))
+            label_file = os.path.join(self.root, "gtFine/%s/%s/%s" % (self.set, city_name, lbname))
+            # -----------------------------------------------------------
+            
             self.files.append({
                 "img": img_file,
                 "label": label_file,

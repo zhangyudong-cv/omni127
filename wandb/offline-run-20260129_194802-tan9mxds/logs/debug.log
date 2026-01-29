@@ -1,0 +1,26 @@
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Configure stats pid to 8901
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Loading settings from /data0/zhangyudong/.config/wandb/settings
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Loading settings from /data0/zhangyudong/omni/OmniSAM/wandb/settings
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'main.py', 'program_abspath': '/data0/zhangyudong/omni/OmniSAM/main.py', 'program': '/data0/zhangyudong/omni/OmniSAM/main.py'}
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Applying login settings: {}
+2026-01-29 19:48:02,912 INFO    MainThread:8901 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2026-01-29 19:48:02,913 INFO    MainThread:8901 [wandb_init.py:_log_setup():521] Logging user logs to /data0/zhangyudong/omni/OmniSAM/wandb/offline-run-20260129_194802-tan9mxds/logs/debug.log
+2026-01-29 19:48:02,913 INFO    MainThread:8901 [wandb_init.py:_log_setup():522] Logging internal logs to /data0/zhangyudong/omni/OmniSAM/wandb/offline-run-20260129_194802-tan9mxds/logs/debug-internal.log
+2026-01-29 19:48:02,913 INFO    MainThread:8901 [wandb_init.py:init():561] calling init triggers
+2026-01-29 19:48:02,913 INFO    MainThread:8901 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {'seed': 1234, 'batch_size': 4, 'num_epochs': 10, 'lr': 0.0001, 'backbone': 'sam2_s', 'dataset': 'Cityscapes', 'num_maskmem': 9, 'image_size': 1024, 'patch_stride': 128, 'data_root': '/data0/zhangyudong/omni/data', 'load_ckpt': None, 'save_ckpt_dir': 'checkpoints/premodul_sam2_small_batch4_memory9'}
+2026-01-29 19:48:02,913 INFO    MainThread:8901 [wandb_init.py:init():611] starting backend
+2026-01-29 19:48:02,913 INFO    MainThread:8901 [wandb_init.py:init():615] setting up manager
+2026-01-29 19:48:02,917 INFO    MainThread:8901 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2026-01-29 19:48:02,934 INFO    MainThread:8901 [wandb_init.py:init():623] backend started and connected
+2026-01-29 19:48:02,937 INFO    MainThread:8901 [wandb_init.py:init():715] updated telemetry
+2026-01-29 19:48:02,945 INFO    MainThread:8901 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2026-01-29 19:48:02,954 INFO    MainThread:8901 [wandb_init.py:init():799] starting run threads in backend
+2026-01-29 19:48:07,587 INFO    MainThread:8901 [wandb_run.py:_console_start():2335] atexit reg
+2026-01-29 19:48:07,587 INFO    MainThread:8901 [wandb_run.py:_redirect():2190] redirect: wrap_raw
+2026-01-29 19:48:07,587 INFO    MainThread:8901 [wandb_run.py:_redirect():2255] Wrapping output streams.
+2026-01-29 19:48:07,587 INFO    MainThread:8901 [wandb_run.py:_redirect():2280] Redirects installed.
+2026-01-29 19:48:07,588 INFO    MainThread:8901 [wandb_init.py:init():842] run started, returning control to user process

@@ -1,0 +1,229 @@
+{
+    "os": "Linux-4.15.0-143-generic-x86_64-with-glibc2.27",
+    "python": "3.10.19",
+    "heartbeatAt": "2026-01-29T11:48:03.075596",
+    "startedAt": "2026-01-29T11:48:02.909736",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--batch_size=4",
+        "--lr=1e-4",
+        "--num_epochs=10",
+        "--dataset=Cityscapes",
+        "--backbone=sam2_s",
+        "--num_maskmem=9",
+        "--save_ckpt_dir=checkpoints/premodul_sam2_small_batch4_memory9",
+        "--data_root=/data0/zhangyudong/omni/data"
+    ],
+    "state": "running",
+    "program": "/data0/zhangyudong/omni/OmniSAM/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/zhangyudong-cv/omni127.git",
+        "commit": "6e7907b8d1f261c00cc9b7019404a392de127f18"
+    },
+    "email": "1678513429@qq.com",
+    "root": "/data0/zhangyudong/omni/OmniSAM",
+    "host": "iipl-127",
+    "username": "zhangyudong",
+    "executable": "/data0/zhangyudong/.conda/envs/omnisam1/bin/python3.1",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2223.0796875,
+        "min": 800.0,
+        "max": 2101.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2394.892,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2399.258,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2338.288,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2396.322,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2399.919,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2409.318,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2653.736,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2647.912,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2173.176,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2070.772,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2099.581,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2098.258,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 1495.257,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 1165.003,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2049.724,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 918.342,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2398.741,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2399.956,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2409.874,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2340.606,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2325.42,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2424.603,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2655.026,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2409.421,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2100.006,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2098.285,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2099.529,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 1715.449,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 1450.873,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 1150.215,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 2099.99,
+            "min": 800.0,
+            "max": 2101.0
+        },
+        {
+            "current": 1043.05,
+            "min": 800.0,
+            "max": 2101.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 439.72071075439453,
+            "used": 107.99393463134766
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpu_count": 4,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4080",
+            "memory_total": 17171480576
+        },
+        {
+            "name": "NVIDIA GeForce RTX 4080",
+            "memory_total": 17171480576
+        },
+        {
+            "name": "NVIDIA GeForce RTX 4080",
+            "memory_total": 17171480576
+        },
+        {
+            "name": "NVIDIA GeForce RTX 4080",
+            "memory_total": 17171480576
+        }
+    ],
+    "memory": {
+        "total": 109.8162841796875
+    }
+}
