@@ -7,7 +7,10 @@ import numpy as np
 import torch
 import datetime
 import wandb
-
+#
+import torch.distributed as dist
+import os
+#
 from adaptation.engine import Engine
 from train.trainer import Trainer
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -148,6 +151,13 @@ def parse_arg() -> TrainConfig:
     return TrainConfig(**vars(args))
 
 def main():
+    # #修改
+    # # 🟢 1. 初始化分布式环境 (必须放在第一行)
+    # dist.init_process_group(backend='nccl')
+    # # 🟢 2. 根据本地 Rank 设置当前 GPU (防止所有进程抢 0 号卡)
+    # local_rank = int(os.environ["LOCAL_RANK"])
+    # torch.cuda.set_device(local_rank)
+    # #结束
     args = parse_arg()
     set_seed(args.seed)
     dt = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

@@ -2,6 +2,8 @@ from typing import Protocol, Tuple
 import torch
 import wandb
 
+
+
 def linear_ramp(cur, start_step, end_step, max_w):
     if cur < start_step: return 0.0
     if cur > end_step:   return max_w
@@ -124,6 +126,7 @@ class NoMemStrategy(WithMemStrategy):
                 proto_bank, 
                 alpha, 
                 device, 
+                optimizer,
                 callbacks,
                 is_warmup
                 ):

@@ -9,7 +9,7 @@ import torch
 import torch.distributed as dist
 import datetime
 import wandb
-
+#预训练
 from train.trainer import Trainer
 warnings.filterwarnings("ignore", category=UserWarning)
 

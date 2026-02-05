@@ -15,6 +15,7 @@ from dataset.DensePASS import DensePASS13
 from dataset.SynPASS import SynPASS13
 from dataset.StanfordPin import StanfordPin8DataSet
 from dataset.StanfordPan import StanfordPan8forPL, StanfordPan8forAdaptation, StanfordPan8forVal
+from torch.utils.data.distributed import DistributedSampler
 
 
 DATASET_NAME2CLASSES = {
@@ -76,7 +77,10 @@ class DatasetBuilder:
             root_syn = os.path.join(self.args.data_root, 'WildPASS')
             val_list = 'dataset/densepass_list/train.txt'
             tgt_train_dataset = WildPASSforPL(root_syn, val_list, crop_size=(4096, 1024), sliding_window=(384, 1024))
-            tgt_train_loader = DataLoader(tgt_train_dataset, batch_size=1, shuffle=True,
+            # #定义分布式采样器：
+            # sampler = DistributedSampler(tgt_train_dataset, shuffle=False)
+            #引入采集器  且分布打乱
+            tgt_train_loader = DataLoader(tgt_train_dataset, batch_size=1,  shuffle=True,
                                           num_workers=4, pin_memory=True)
         elif self.args.dataset == 'Stanford2D3D':
             class_names = DATASET_NAME2CLASSES['Stanford2D3D']
