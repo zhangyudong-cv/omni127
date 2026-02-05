@@ -72,7 +72,7 @@ class DatasetBuilder:
         num_classes = len(class_names)
 
         if self.args.dataset == 'Stanford2D3D':
-            root_train = os.path.join(self.args.data_root, 'Stanford2d3d_Seg')
+            root_train = os.path.join(self.args.data_root, 'Stanford2D3D')
             train_list = 'dataset/s2d3d_pin_list/train.txt'
             val_list = 'dataset/s2d3d_pin_list/val.txt'
             train_dataset = StanfordPin8DataSet(root_train, train_list, crop_size=(1024, 1024), set='train')
